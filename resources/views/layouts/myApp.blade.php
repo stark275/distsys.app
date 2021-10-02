@@ -39,7 +39,7 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="#" class="nav-brand">FIleDrive</a>
+                        <a href="{{config('app.middleware')}}" class="nav-brand">FIleDrive</a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">

@@ -31,4 +31,6 @@ class HomeController extends Controller
         //dd(url()->current());
         return view('home');
     }
+
+
 }
