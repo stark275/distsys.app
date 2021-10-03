@@ -1,6 +1,5 @@
 /* [Master Stylesheet - v1.0] */
 /* :: 1.0 Import Fonts */
-@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i");
 /* :: 2.0 Import All CSS */
 @import url(css/bootstrap.min.css);
 @import url(css/classy-nav.css);
@@ -131,7 +130,7 @@ img {
   padding-bottom: 100px; }
 
 .section-padding-100-0 {
-  padding-top: 100px;
+  padding-top: 10px;
   padding-bottom: 0; }
 
 .section-padding-0-100 {

@@ -10,13 +10,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
+    <link rel="stylesheet" href="{{asset("style.css") }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -48,21 +48,24 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{config('app.middleware')}}{{ route('register',[],false ) }}">{{ __('Register') }}</a>
+                                    <a class="nav-link"  href="{{config('app.middleware')}}{{ route('register',[],false ) }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary" style="color:#ffffff !important" href="{{config('app.middleware')}}{{ route('medias.create',[],false ) }}">{{ __('New File') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
+                            </li>
+                            <li class="nav-item dropdown">
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -79,5 +82,20 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script defer src="{{asset("js/jquery/jquery-2.2.4.min.js") }}"></script>
+    <!-- Popper js -->
+    <script defer src="{{asset("js/bootstrap/popper.min.js") }}"></script>
+    <!-- Bootstrap js -->
+    <script defer src="{{asset("js/bootstrap/bootstrap.min.js") }}"></script>
+    <!-- All Plugins js -->
+    <script defer src="{{asset("js/plugins/plugins.js") }}"></script>
+    <!-- Active js -->
+    <script defer src="{{asset("js/active.js") }}"></script>
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </body>
 </html>

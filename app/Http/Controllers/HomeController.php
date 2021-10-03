@@ -25,10 +25,7 @@ class HomeController extends Controller
     public function index()
     {
 
-           // dd(config('app.middleware'));
-       // dd(request());
-       // return redirect()->to("http://localhost:8010");
-        //dd(url()->current());
+       dd(auth()->user()->medias->where('public','1'));
         return view('home');
     }
 

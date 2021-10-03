@@ -25,4 +25,10 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/medias/{user}', [MediaController::class, 'index'])->name('medias');
 
+Route::get('/new', [MediaController::class, 'create'])->name('medias.create');
+Route::post('/new', [MediaController::class, 'store'])->name('medias.store');
+
+
+
+
 

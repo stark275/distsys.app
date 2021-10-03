@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Media extends Model
 {
     use HasFactory;
-
+    protected $guarded = [];
     protected $table = 'file';
 
     public function user()

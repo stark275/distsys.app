@@ -14,7 +14,7 @@
 
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset("style.cs") }}s">
+    <link rel="stylesheet" href="{{asset("style.css") }}">
 
 </head>
 
@@ -101,15 +101,15 @@
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="{{asset("js/jquery/jquery-2.2.4.min.js") }}"></script>
+    <script defer src="{{asset("js/jquery/jquery-2.2.4.min.js") }}"></script>
     <!-- Popper js -->
-    <script src="{{asset("js/bootstrap/popper.min.js") }}"></script>
+    <script defer src="{{asset("js/bootstrap/popper.min.js") }}"></script>
     <!-- Bootstrap js -->
-    <script src="{{asset("s/bootstrap/bootstrap.min.js") }}j"></script>
+    <script defer src="{{asset("js/bootstrap/bootstrap.min.js") }}"></script>
     <!-- All Plugins js -->
-    <script src="{{asset("js/plugins/plugins.js") }}"></script>
+    <script defer src="{{asset("js/plugins/plugins.js") }}"></script>
     <!-- Active js -->
-    <script src="{{asset("js/active.js") }}"></script>
+    <script defer src="{{asset("js/active.js") }}"></script>
 </body>
 
 </html>
