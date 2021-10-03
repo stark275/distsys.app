@@ -35,9 +35,12 @@
                                 <button type="button" class="btn btn-default">
                                   <img src="{{asset('img/down.png')}}" style="height: 20px; width: 20px" alt="">
                                 </button>
-                                <button type="button" class="btn btn-default">
-                                  <img src="{{asset('img/edit.png')}}" style="height: 20px; width: 20px" alt="">
-                                </button>
+                                @can('update', $media)
+                                     <button type="button" class="btn btn-default">
+                                        <img src="{{asset('img/edit.png')}}" style="height: 20px; width: 20px" alt="">
+                                    </button>
+                                @endcan
+
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{config('app.middleware')}}{{ route('root',[],false) }}">
+                <a class="navbar-brand" href="{{config('app.middleware')}}{{ route('home',[],false) }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -55,6 +55,9 @@
                             <li class="nav-item">
                                 <a class="nav-link btn btn-primary" style="color:#ffffff !important" href="{{config('app.middleware')}}{{ route('medias.create',[],false ) }}">{{ __('New File') }}</a>
                             </li>
+                            <li class="nav-item">
+                                    <a class="nav-link"  href="{{config('app.middleware')}}{{ route('users',[],false ) }}">Users</a>
+                                </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

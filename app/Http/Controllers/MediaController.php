@@ -47,7 +47,7 @@ class MediaController extends Controller
             $type = 'audio';
         }
 
-       $file =  auth()->user()->medias()->create([
+        auth()->user()->medias()->create([
             'name' => $data['name'],
             'type' => $type,
             'path' => $imagePath
