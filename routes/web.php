@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,9 @@ Route::get('/medias/{user}', [MediaController::class, 'index'])->name('medias');
 
 Route::get('/new', [MediaController::class, 'create'])->name('medias.create');
 Route::post('/new', [MediaController::class, 'store'])->name('medias.store');
+
+Route::get('/users', [UserController::class, 'index'])->name('users');
+
 
 
 

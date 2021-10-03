@@ -13,9 +13,6 @@
                         <a href="#" data-filter=".audio">Audios</a>
                         <a href="#" data-filter=".image">Images</a>
                         <a href="#" data-filter=".pdf">PDF</a>
-
-
-
                     </div>
                 </div>
             </div>
@@ -34,7 +31,14 @@
                             <a href="#">
                                 <h5>{{$media->name}}</h5>
                             </a>
-                            <p></p>
+                            <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">
+                                  <img src="{{asset('img/down.png')}}" style="height: 20px; width: 20px" alt="">
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                  <img src="{{asset('img/edit.png')}}" style="height: 20px; width: 20px" alt="">
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
