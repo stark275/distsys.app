@@ -2,17 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Media;
 use App\Models\User;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MediaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(User $user)
     {
         return view('media.index',[
             'medias' => $user->medias->where('public', '0')
         ]);
+    }
+
+    public function edit(Media $media)
+    {
+        //$this->authorize('update',$media);
+        return view('media.edit',[
+            'media' => $media
+        ]);
+    }
+
+    public function update(Media $media)
+    {
+        $this->authorize('update', $media);
+
+        // process
+
+        return redirect()->route('medias', ['user' => auth()->user()]);
     }
 
     public function create()
@@ -22,11 +46,16 @@ class MediaController extends Controller
 
     public function store()
     {
+
         $data = request()->validate([
             'name' => ['required', 'string'],
             'image' => ['required', 'file','mimes:png,jpg,jpeg,mp4,mp3,doc,docx,xls,xlsx,zip,rar']
         ]);
+
+
         $imagePath = request('image')->store('uploads', 'public');
+
+        Storage::disk('ftp')->put($imagePath,fopen(request()->file('image'), 'r+'));
 
         $ext =  request()->file('image')->extension();
 
@@ -55,6 +84,6 @@ class MediaController extends Controller
 
        // dd($file);
 
-        return redirect()->route('medias', ['user' => auth()->user()]);
+        return redirect()->to('http://localhost:8010/medias/'.auth()->user()->id);
     }
 }

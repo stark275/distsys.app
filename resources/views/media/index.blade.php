@@ -32,13 +32,13 @@
                                 <h5>{{$media->name}}</h5>
                             </a>
                             <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">
+                                <a href="#" class="btn btn-default">
                                   <img src="{{asset('img/down.png')}}" style="height: 20px; width: 20px" alt="">
-                                </button>
+                                </a>
                                 @can('update', $media)
-                                     <button type="button" class="btn btn-default">
+                                     <a href="{{config('app.middleware')}}{{ route('medias.edit',['id' => $media],false ) }}" class="btn btn-default">
                                         <img src="{{asset('img/edit.png')}}" style="height: 20px; width: 20px" alt="">
-                                    </button>
+                                    </a>
                                 @endcan
 
                             </div>
