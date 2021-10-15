@@ -18,7 +18,7 @@ class MediaController extends Controller
     public function index(User $user)
     {
         return view('media.index',[
-            'medias' => $user->medias->where('public', '0')
+            'medias' => $user->medias
         ]);
     }
 

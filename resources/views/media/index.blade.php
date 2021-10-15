@@ -32,7 +32,7 @@
                                 <h5>{{$media->name}}</h5>
                             </a>
                             <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                                <a href="#" class="btn btn-default">
+                                <a href="http://localhost/ftp/{{$media->path}}" class="btn btn-default">
                                   <img src="{{asset('img/down.png')}}" style="height: 20px; width: 20px" alt="">
                                 </a>
                                 @can('update', $media)
